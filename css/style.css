@@ -1,0 +1,126 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to right top, #802727, #103aa3);
+    background-size: cover;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+header h1 {
+    color: aliceblue;
+}
+
+#placar {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    padding: 20px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#placar h3 {
+    margin: 0;
+}
+
+#placar span {
+    font-size: 1.5rem;
+}
+
+#placar ol {
+    font-size: 1.3rem;
+    margin: 5px 0;
+    font-weight: 800;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#conteinerGlobal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgb(37, 37, 37);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.azul {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 100% 0 0 0;
+    background-color: blue;
+}
+
+main section {
+    transition: all .25s;
+}
+
+main section:hover {
+    transform: scale(1.05);
+}
+
+.vermelho {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 0 100% 0 0;
+    background-color: red;
+}
+
+.verde {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 0 0 100% 0;
+    background-color: green;
+}
+
+.amarelo {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 0 0 0 100%;
+    background-color: yellow;
+}
+
+.containerPerdeu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    border-radius: 25px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    border: 3px solid rgb(37, 37, 37);
+}
+
+.containerPerdeu h3 {
+    font-size: 1.2rem;
+}
+
+.containerPerdeu h4 {
+    font-size: 1.2rem;
+}
+
+.containerPerdeu button {
+    background-color: rgb(37, 37, 37);
+    color: aliceblue;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+footer {
+    color: rgb(171, 189, 189);
+    font-size: 1.3rem;
+}
+
+footer a {
+    color: rgb(101, 179, 247);
+    text-decoration: none;
+}
