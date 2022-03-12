@@ -5,12 +5,10 @@ const cores = {
     amarelo: document.querySelector('.amarelo'),
     verde: document.querySelector('.verde')
 }
-let contPlayer = 1
 let jogador = []
-if (localStorage.getItem('ranking').length <= 0) {
-    let rankingArr = []
-    localStorage.setItem('ranking', rankingArr)
-}
+let contPlayer = 1
+let rankingArr = []
+localStorage.setItem('ranking', rankingArr)
 
 function vezDoPc() {
     const randon = Math.floor(Math.random() * (5 - 1) + 1)
@@ -26,13 +24,7 @@ function vezDoPc() {
         b = Number(b.replace(/[^0-9]/g, ''))
         return a - b
     }).reverse().filter((str, index) => index < 5)
-    top5.forEach((element, index) => {
-        if (index === 0) {
-            element = element.replace('A sua', 'A sua maior')
-        }
-        if (index === top5.length - 1) {
-            element = element.replace('A sua', 'A sua pior')
-        }
+    top5.forEach(element => {
         const li = document.createElement('li')
         li.innerHTML = element
         ranking.appendChild(li)
@@ -182,7 +174,7 @@ function perdeu(pontuacao) {
     h3.innerHTML = 'Voce perdeu tente novamente'
     const h4 = document.createElement('h4')
     h4.classList.add('pontuacaoTotal')
-    h4.innerHTML = `Nesta rodada você acertou uma sequencia de ${pontuacao} cores`
+    h4.innerHTML = ` ${pontuacao} cores`
     const buttonReset = document.createElement('button')
     buttonReset.classList.add('buttonPerdeu')
     buttonReset.innerHTML = 'Jogar Novamente'
@@ -191,9 +183,8 @@ function perdeu(pontuacao) {
         main.removeChild(div)
         vezDoPc()
     })
-    const rankingStorage = localStorage.getItem('ranking').length > 0 ? localStorage.getItem('ranking').split(',') : []
-    rankingStorage.push(`A sua pontuação foi ${pontuacao}`)
-    localStorage.setItem('ranking', rankingStorage)
+    rankingArr.push(`A sua pontuação foi ${pontuacao}`)
+    localStorage.setItem('ranking', rankingArr)
     div.appendChild(h3)
     div.appendChild(h4)
     div.appendChild(buttonReset)
